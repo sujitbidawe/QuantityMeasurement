@@ -35,7 +35,8 @@ public class QuantityTest {
     @Test
     public void givenFeetAndDifferentType_shouldReturnNotEqual() {
         Feet feet1 = new Feet(0.0);
-        Assert.assertNotEquals(feet1, "trial");
+        String someString = "test";
+        Assert.assertNotEquals(feet1, someString);
     }
 
     @Test
@@ -68,7 +69,8 @@ public class QuantityTest {
     @Test
     public void givenInchAndDifferentType_shouldReturnNotEqual() {
         Inch inch1 = new Inch(0.0);
-        Assert.assertNotEquals(inch1, "trial");
+        String someString = "test";
+        Assert.assertNotEquals(inch1, someString);
     }
 
 
