@@ -60,7 +60,7 @@ public class QuantityTest {
     }
 
     @Test
-    public void givenValuesWithDifferentReference_shouldReturnNotEqual() {
+    public void givenValuesWithDifferentType_shouldReturnNotEqual() {
         Inch inch1 = new Inch(0.0);
         Feet feet1 = new Feet(0.0);
         Assert.assertNotEquals(inch1, feet1);
