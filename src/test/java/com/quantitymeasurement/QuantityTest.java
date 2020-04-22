@@ -183,4 +183,12 @@ public class QuantityTest {
         boolean compareCheck = cm1.compare(inch1);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given2InchAnd2Inch_whenAdded_shouldReturnSum() {
+        Length inch1 = new Length(Unit.INCH, 2);
+        Length inch2 = new Length(Unit.INCH, 2);
+        double sum = inch1.add(inch2);
+        Assert.assertEquals(4.0, sum, 0.0);
+    }
 }
