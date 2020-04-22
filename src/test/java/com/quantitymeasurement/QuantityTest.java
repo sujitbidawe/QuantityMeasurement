@@ -223,4 +223,12 @@ public class QuantityTest {
         boolean compareCheck = gallon1.compare(litre1);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given1LitreAnd1000MiliLitres_whenCompared_shouldRetunEqual() {
+        Volume litre1 = new Volume(Unit.LITRE, 1.0);
+        Volume miliLitre1 = new Volume(Unit.MILILITRE, 1000.0);
+        boolean compareCheck = litre1.compare(miliLitre1);
+        Assert.assertTrue(compareCheck);
+    }
 }
