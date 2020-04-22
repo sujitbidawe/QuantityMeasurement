@@ -199,4 +199,12 @@ public class QuantityTest {
         double sum = feet1.add(inch2);
         Assert.assertEquals(14.0, sum, 0.0);
     }
+
+    @Test
+    public void given1FeetAnd1Feet_whenAdded_shouldReturnSum() {
+        Length feet1 = new Length(Unit.FEET, 1);
+        Length feet2 = new Length(Unit.FEET, 1);
+        double sum = feet1.add(feet2);
+        Assert.assertEquals(24, sum, 0.0);
+    }
 }
