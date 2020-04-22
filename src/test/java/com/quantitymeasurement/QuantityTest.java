@@ -175,4 +175,12 @@ public class QuantityTest {
         boolean compareCheck = yard1.compare(feet1);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given2InchAnd5Cm_whenCompared_shouldReturnEqual() {
+        Length cm1 = new Length(Unit.CM, 5);
+        Length inch1 = new Length(Unit.INCH, 2);
+        boolean compareCheck = cm1.compare(inch1);
+        Assert.assertTrue(compareCheck);
+    }
 }
