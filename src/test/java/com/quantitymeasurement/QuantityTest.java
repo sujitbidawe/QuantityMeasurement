@@ -215,4 +215,12 @@ public class QuantityTest {
         double sum = inch1.add(cm1);
         Assert.assertEquals(3, sum, 0.0);
     }
+
+    @Test
+    public void given1GallonAnd3Point78litres_whenCompared_shouldRetunEqual() {
+        Volume gallon1 = new Volume(Unit.GALLON, 1.0);
+        Volume litre1 = new Volume(Unit.LITRE, 3.78);
+        boolean compareCheck = gallon1.compare(litre1);
+        Assert.assertTrue(compareCheck);
+    }
 }
