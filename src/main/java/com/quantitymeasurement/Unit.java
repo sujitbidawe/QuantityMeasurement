@@ -2,7 +2,7 @@ package com.quantitymeasurement;
 
 public enum Unit {
 
-    FEET(12.0), INCH(1.0), YARD(36);
+    FEET(12.0), INCH(1.0), YARD(36), CM(1.0/2.5);
 
     private final double baseUnitComparison;
 
