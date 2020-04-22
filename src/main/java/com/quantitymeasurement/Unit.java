@@ -14,5 +14,4 @@ public enum Unit {
         return Double.compare(l1.value * l1.unit.baseUnitComparison,
                               l2.value * l2.unit.baseUnitComparison) == 0;
     }
-
 }
