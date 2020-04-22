@@ -207,4 +207,12 @@ public class QuantityTest {
         double sum = feet1.add(feet2);
         Assert.assertEquals(24, sum, 0.0);
     }
+
+    @Test
+    public void given2InchAnd2Point5Cm_whenAdded_shouldReturnSum() {
+        Length inch1 = new Length(Unit.INCH, 2.0);
+        Length cm1 = new Length(Unit.CM, 2.5);
+        double sum = inch1.add(cm1);
+        Assert.assertEquals(3, sum, 0.0);
+    }
 }
