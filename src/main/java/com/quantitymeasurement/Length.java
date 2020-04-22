@@ -15,6 +15,11 @@ public class Length {
         return compareCheck;
     }
 
+    public double add(Length thatLength) {
+        double sum = unit.add(this, thatLength);
+        return sum;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
