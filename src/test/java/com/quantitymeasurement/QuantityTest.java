@@ -143,4 +143,12 @@ public class QuantityTest {
         boolean compareCheck = feet1.compare(yard1);
         Assert.assertFalse(compareCheck);
     }
+
+    @Test
+    public void given1InchAnd1Yard_whenCompared_shouldReturnNotEqual() {
+        Length inch1 = new Length(Unit.INCH, 1.0);
+        Length yard1 = new Length(Unit.YARD, 1.0);
+        boolean compareCheck = inch1.compare(yard1);
+        Assert.assertFalse(compareCheck);
+    }
 }
