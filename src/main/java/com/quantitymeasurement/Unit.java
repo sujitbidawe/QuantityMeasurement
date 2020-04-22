@@ -25,4 +25,9 @@ public enum Unit {
         return l1.value * l1.unit.baseUnitComparison +
                 l2.value * l2.unit.baseUnitComparison;
     }
+
+    public double add(Volume v1, Volume v2) {
+        return v1.value * v1.unit.baseUnitComparison +
+                v2.value * v2.unit.baseUnitComparison;
+    }
 }

@@ -14,6 +14,11 @@ public class Volume {
         return compareCheck;
     }
 
+    public double add(Volume thatLitre) {
+        double sum = unit.add(this, thatLitre);
+        return sum;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
