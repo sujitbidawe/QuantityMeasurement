@@ -2,43 +2,36 @@ package com.quantitymeasurement;
 
 public enum Unit {
 
-    FEET(12.0), INCH(1.0), YARD(36), CM(1.0/2.5),
-    LITRE(1.0), GALLON(3.78), MILILITRE(1.0/1000.0),
-    KG(1.0), GRAM(1.0/1000.0), TONNE(1000.0);
+    FEET(12.0, "length"),
+    INCH(1.0, "length"),
+    YARD(36, "length"),
+    CM(1.0/2.5, "length"),
+    LITRE(1.0, "volume"),
+    GALLON(3.78, "volume"),
+    MILILITRE(1.0/1000.0, "volume"),
+    KG(1.0, "weight"),
+    GRAM(1.0/1000.0, "weight"),
+    TONNE(1000.0, "weight");
 
     private final double baseUnitComparison;
+    private String quantityType;
 
-    Unit(double baseUnitComparison){
+    Unit(double baseUnitComparison, String quantityType){
         this.baseUnitComparison = baseUnitComparison;
+        this.quantityType = quantityType;
     }
 
-    public boolean compare(Length l1, Length l2){
-        return Double.compare(l1.value * l1.unit.baseUnitComparison,
-                              l2.value * l2.unit.baseUnitComparison) == 0;
+    public boolean compare(Quantity q1, Quantity q2) {
+        if(!q1.unit.quantityType.equals(q2.unit.quantityType)) {
+            System.out.println("Incomparable quantity types!");
+            return false;
+        }
+        return Double.compare(q1.value * q1.unit.baseUnitComparison,
+                q2.value * q2.unit.baseUnitComparison) == 0;
     }
 
-    public boolean compare(Volume v1, Volume v2){
-        return Double.compare(v1.value * v1.unit.baseUnitComparison,
-                v2.value * v2.unit.baseUnitComparison) == 0;
-    }
-
-    public boolean compare(Weight w1, Weight w2) {
-        return Double.compare(w1.value * w1.unit.baseUnitComparison,
-                w2.value * w2.unit.baseUnitComparison) == 0;
-    }
-
-    public double add(Length l1, Length l2) {
-        return l1.value * l1.unit.baseUnitComparison +
-                l2.value * l2.unit.baseUnitComparison;
-    }
-
-    public double add(Volume v1, Volume v2) {
-        return v1.value * v1.unit.baseUnitComparison +
-                v2.value * v2.unit.baseUnitComparison;
-    }
-
-    public double add(Weight w1, Weight w2) {
-        return w1.value * w1.unit.baseUnitComparison +
-                w2.value * w2.unit.baseUnitComparison;
+    public double add(Quantity q1, Quantity q2) {
+        return q1.value * q1.unit.baseUnitComparison +
+                q2.value * q2.unit.baseUnitComparison;
     }
 }
