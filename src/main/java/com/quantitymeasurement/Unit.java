@@ -13,25 +13,11 @@ public enum Unit {
     GRAM(1.0/1000.0, "weight"),
     TONNE(1000.0, "weight");
 
-    private final double baseUnitComparison;
-    private String quantityType;
+    public final double baseUnitComparison;
+    public String quantityType;
 
     Unit(double baseUnitComparison, String quantityType){
         this.baseUnitComparison = baseUnitComparison;
         this.quantityType = quantityType;
-    }
-
-    public boolean compare(Quantity q1, Quantity q2) {
-        if(!q1.unit.quantityType.equals(q2.unit.quantityType)) {
-            System.out.println("Incomparable quantity types!");
-            return false;
-        }
-        return Double.compare(q1.value * q1.unit.baseUnitComparison,
-                q2.value * q2.unit.baseUnitComparison) == 0;
-    }
-
-    public double add(Quantity q1, Quantity q2) {
-        return q1.value * q1.unit.baseUnitComparison +
-                q2.value * q2.unit.baseUnitComparison;
     }
 }
