@@ -247,4 +247,12 @@ public class QuantityTest {
         double sum = litre1.add(miliLittre1);
         Assert.assertEquals(2.0, sum, 0.0);
     }
+
+    @Test
+    public void given1KgAnd1000Grams_whenAdded_shouldReturnSum() {
+        Weight kg1 = new Weight(Unit.KG, 1.0);
+        Weight gram1 = new Weight(Unit.GRAM, 1000.0);
+        double sum = kg1.add(gram1);
+        Assert.assertEquals(2000, sum, 0.0);
+    }
 }
