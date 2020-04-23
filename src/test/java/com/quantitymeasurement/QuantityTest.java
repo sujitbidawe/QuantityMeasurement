@@ -255,4 +255,12 @@ public class QuantityTest {
         double sum = kg1.add(gram1);
         Assert.assertEquals(2000, sum, 0.0);
     }
+
+    @Test
+    public void given1KgAnd1000Grams_whenCompared_shouldReturnEqual() {
+        Weight kg1 = new Weight(Unit.KG, 1.0);
+        Weight gram1 = new Weight(Unit.GRAM, 1000.0);
+        boolean compareCheck = kg1.compare(gram1);
+        Assert.assertTrue(compareCheck);
+    }
 }
