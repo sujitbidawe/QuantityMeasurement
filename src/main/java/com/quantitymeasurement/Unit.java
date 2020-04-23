@@ -3,7 +3,8 @@ package com.quantitymeasurement;
 public enum Unit {
 
     FEET(12.0), INCH(1.0), YARD(36), CM(1.0/2.5),
-    LITRE(1.0), GALLON(3.78), MILILITRE(1.0/1000.0);
+    LITRE(1.0), GALLON(3.78), MILILITRE(1.0/1000.0),
+    KG(1000), GRAM(1);
 
     private final double baseUnitComparison;
 
@@ -21,6 +22,11 @@ public enum Unit {
                 v2.value * v2.unit.baseUnitComparison) == 0;
     }
 
+    public boolean compare(Weight w1, Weight w2) {
+        return Double.compare(w1.value * w1.unit.baseUnitComparison,
+                w2.value * w2.unit.baseUnitComparison) == 0;
+    }
+
     public double add(Length l1, Length l2) {
         return l1.value * l1.unit.baseUnitComparison +
                 l2.value * l2.unit.baseUnitComparison;
@@ -29,5 +35,10 @@ public enum Unit {
     public double add(Volume v1, Volume v2) {
         return v1.value * v1.unit.baseUnitComparison +
                 v2.value * v2.unit.baseUnitComparison;
+    }
+
+    public double add(Weight w1, Weight w2) {
+        return w1.value * w1.unit.baseUnitComparison +
+                w2.value * w2.unit.baseUnitComparison;
     }
 }
