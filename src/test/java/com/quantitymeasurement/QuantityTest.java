@@ -253,7 +253,7 @@ public class QuantityTest {
         Weight kg1 = new Weight(Unit.KG, 1.0);
         Weight gram1 = new Weight(Unit.GRAM, 1000.0);
         double sum = kg1.add(gram1);
-        Assert.assertEquals(2000, sum, 0.0);
+        Assert.assertEquals(2, sum, 0.0);
     }
 
     @Test
@@ -277,6 +277,14 @@ public class QuantityTest {
         Weight tonne1 = new Weight(Unit.TONNE, 1.0);
         Weight kg1 = new Weight(Unit.KG, 1000.0);
         double sum = tonne1.add(kg1);
-        Assert.assertEquals(2000000, sum, 0.0);
+        Assert.assertEquals(2000, sum, 0.0);
+    }
+
+    @Test
+    public void given1TonneAnd1000Grams_whenAdded_shouldReturnSum() {
+        Weight tonne1 = new Weight(Unit.TONNE, 1.0);
+        Weight gram1 = new Weight(Unit.GRAM, 1000.0);
+        double sum = tonne1.add(gram1);
+        Assert.assertEquals(1001, sum, 0.0);
     }
 }
