@@ -1,25 +1,20 @@
 package com.quantitymeasurement;
 
-import java.util.Objects;
-
 public class Quantity {
 
     public Unit unit;
     public double value;
 
-    public Quantity(Unit unit, double value) {
+    public Quantity(Unit unit, double value) throws QuantityException {
         this.unit = unit;
+        if(value < 0.0 ){
+            throw new QuantityException(QuantityException.ExceptionType.NEGATIVE_VALUE, "quantities cannot be negative");
+        }
         this.value = value;
     }
 
-    public boolean compare(Quantity thatQuantity) {
-        boolean compareCheck = unit.compare( this, thatQuantity);
-        return compareCheck;
-    }
-
-    public double add(Quantity thatQuantity) {
-        double sum = unit.add(this, thatQuantity);
-        return sum;
+    public double getValue() {
+        return value;
     }
 
     @Override
@@ -27,7 +22,6 @@ public class Quantity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Quantity quantity = (Quantity) o;
-        return Double.compare(quantity.value, value) == 0 &&
-                unit == quantity.unit;
+        return Double.compare(quantity.value, value) == 0 && unit == quantity.unit;
     }
 }
