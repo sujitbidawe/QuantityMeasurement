@@ -4,7 +4,7 @@ public enum Unit {
 
     FEET(12.0), INCH(1.0), YARD(36), CM(1.0/2.5),
     LITRE(1.0), GALLON(3.78), MILILITRE(1.0/1000.0),
-    KG(1000), GRAM(1), TONNE(1000000);
+    KG(1.0), GRAM(1.0/1000.0), TONNE(1000.0);
 
     private final double baseUnitComparison;
 
