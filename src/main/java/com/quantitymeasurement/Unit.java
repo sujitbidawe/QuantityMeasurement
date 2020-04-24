@@ -12,8 +12,8 @@ public enum Unit {
     KG(1.0, "weight"),
     GRAM(1.0/1000.0, "weight"),
     TONNE(1000.0, "weight"),
-    CELSIUS(2.12, "temperature"),
-    FAHRENHEIT(1.0, "temperature");
+    CELSIUS(1, "temperature"),
+    FAHRENHEIT(5.0/9.0, "temperature");
 
     public double baseUnitComparison;
     public String quantityType;
