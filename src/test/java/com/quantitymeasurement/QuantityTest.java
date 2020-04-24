@@ -322,4 +322,12 @@ public class QuantityTest {
             Assert.assertEquals(QuantityException.ExceptionType.NEGATIVE_VALUE, e.type);
         }
     }
+
+    @Test
+    public void given212FahrenheitAnd100Celsius_whenCompared_shouldReturnEqual() throws QuantityException {
+        Quantity fahrenheit1 = new Quantity(Unit.FAHRENHEIT, 212.0);
+        Quantity celsius1 = new Quantity(Unit.CELSIUS, 100.0);
+        boolean compareCheck = operations.compare(fahrenheit1, celsius1);
+        Assert.assertTrue(compareCheck);
+    }
 }
