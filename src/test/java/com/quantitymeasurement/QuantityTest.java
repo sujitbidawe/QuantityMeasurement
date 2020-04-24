@@ -332,6 +332,14 @@ public class QuantityTest {
     }
 
     @Test
+    public void given0CelsiusAnd32Fahrenheit_whenCompared_shouldReturnEqual() throws QuantityException {
+        Quantity fahrenheit1 = new Quantity(Unit.FAHRENHEIT, 32.0);
+        Quantity celsius1 = new Quantity(Unit.CELSIUS, 0.0);
+        boolean compareCheck = operations.compare(celsius1, fahrenheit1);
+        Assert.assertTrue(compareCheck);
+    }
+
+    @Test
     public void given212FahrenheitAnd100Celsius_whenAdded_shouldThrowException() throws QuantityException {
         try {
             Quantity fahrenheit1 = new Quantity(Unit.FAHRENHEIT, 212.0);
