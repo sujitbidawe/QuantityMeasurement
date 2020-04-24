@@ -2,8 +2,8 @@ package com.quantitymeasurement;
 
 public class Quantity {
 
-    public Unit unit;
-    public double value;
+    private Unit unit;
+    private double value;
 
     public Quantity(Unit unit, double value) throws QuantityException {
         this.unit = unit;
@@ -15,6 +15,10 @@ public class Quantity {
 
     public double getValue() {
         return value;
+    }
+
+    public Unit getUnit() {
+        return unit;
     }
 
     @Override
