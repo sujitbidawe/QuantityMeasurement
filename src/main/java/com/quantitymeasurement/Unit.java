@@ -11,9 +11,11 @@ public enum Unit {
     MILILITRE(1.0/1000.0, "volume"),
     KG(1.0, "weight"),
     GRAM(1.0/1000.0, "weight"),
-    TONNE(1000.0, "weight");
+    TONNE(1000.0, "weight"),
+    CELSIUS(2.12, "temperature"),
+    FAHRENHEIT(1.0, "temperature");
 
-    public final double baseUnitComparison;
+    public double baseUnitComparison;
     public String quantityType;
 
     Unit(double baseUnitComparison, String quantityType){
